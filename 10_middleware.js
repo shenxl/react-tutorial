@@ -47,11 +47,11 @@
 // Here is how it looks like (translated to es5 for readability):
 
 var thunkMiddleware = function ({ dispatch, getState }) {
-    // console.log('Enter thunkMiddleware');
+    console.log('Enter thunkMiddleware');
     return function(next) {
-        // console.log('Function "next" provided:', next);
+       console.log('Function "next" provided:', next);
         return function (action) {
-            // console.log('Handling action:', action);
+            console.log('Handling action:', action);
             return typeof action === 'function' ?
                 action(dispatch, getState) :
                 next(action)
