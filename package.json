@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "redux-tutorial",
   "version": "0.0.1",
   "description": "Learn how to use redux step by step",
@@ -33,5 +34,37 @@
     "babel-eslint": "^3.1.9",
     "eslint-plugin-react": "^2.3.0",
     "webpack-dev-server": "^1.8.2"
+=======
+  "name": "react-tutorial",
+  "version": "0.0.0",
+  "description": "Code from the React tutorial.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactjs/react-tutorial.git"
+  },
+  "keywords": [
+    "react",
+    "tutorial",
+    "comment",
+    "example"
+  ],
+  "author": "petehunt",
+  "bugs": {
+    "url": "https://github.com/reactjs/react-tutorial/issues"
+  },
+  "homepage": "https://github.com/reactjs/react-tutorial",
+  "engines" : {
+    "node" : "0.12.x"
+>>>>>>> bb30eecab69b8bdebb00bfa56e82222f36270178
   }
 }

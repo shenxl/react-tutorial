@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 npm-debug.log
 .DS_Store
@@ -5,3 +6,8 @@ dist
 nested-dispatch.js
 test.js
 .idea
+=======
+*~
+node_modules
+.DS_Store
+>>>>>>> bb30eecab69b8bdebb00bfa56e82222f36270178
