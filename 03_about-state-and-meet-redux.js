@@ -60,6 +60,10 @@
 //     1) a place to put your application state
 //     2) a mechanism to subscribe to state updates
 //     3) a mechanism to dispatch actions to modifiers of your application state, AKA reducers
+//  总结一下，Redux能给你带来的有：
+//     1）一个你存放应用全局状态的容器
+//     2）一个监听者状态变更的机制
+//     3）一个调度action来改变应用状态的机制，又名reducers
 
 // The Redux instance is called a store and can be created like this:
 /*
@@ -68,9 +72,11 @@
 */
 
 // But if you run the code above, you'll notice that it throw an error:
+// 但是如果你执行上面的代码，你会发现抛出了错误异常
 //     Error: Invariant Violation: Expected the reducer to be a function.
 
 // That's because createStore expects a function that will allow it to reduce your state.
+// 这是因为createStore期望一个function来允许reduce应用state
 
 // Let's try again
 
