@@ -1,7 +1,9 @@
 // Tutorial 7 - dispatch-action.js
 
 // So far we've focused on building our reducer(s) and we've not dispatched any of our own actions.
+// 目前为止我们只是关注与如何构建reducer(s)。并没有触发任何的action.
 // We'll keep the same reducers from our previous tutorial and handle few actions:
+// 现在，我们首先把上一节的reducers实现，并处理一些actions:
 
 var userReducer = function (state = {}, action) {
     console.log('userReducer was called with state', state, 'and action', action)
@@ -45,6 +47,8 @@ console.log('store_0 state after initialization:', store_0.getState())
 
 // Let's dispatch our first action... Remember in 'simple-action-creator.js' we said:
 //     "To dispatch an action we need... a dispatch function." Captain obvious
+// 让我们派发第一个action... 记住在'simple-action-creator.js'中我们说过：
+//      “派发action我们需要一个 dispatch 函数”    
 
 // The dispatch function we're looking for is provided by Redux and will propagate our action
 // to all of our reducers! The dispatch function is accessible through Redux 
