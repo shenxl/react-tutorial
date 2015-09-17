@@ -3,12 +3,12 @@
 // We saw previously how we could dispatch actions and how those actions will modify
 // the state of our application thanks to reducers.
 
-// But so far we've only considered synchronous actions, or more exactly action creators
+// But so far we've only considered（考虑） synchronous actions, or more exactly action creators
 // that produce an action synchronously: when called, an action is returned immediately.
 
 // Let's now imagine a simple asynchronous use-case:
 // 1) user clicks on button "Say Hi in 2 seconds"
-// 2) When button "A" is clicked, we'd like to show message "Hi" after 2 seconds have elapsed
+// 2) When button "A" is clicked, we'd like to show message "Hi" after 2 seconds have elapsed（逝去）
 // 3) 2 seconds later, our view is updated with the message "Hi"
 
 // Of course this message is part of our application state so we have to save it
@@ -52,6 +52,7 @@ store_0.dispatch(sayActionCreator('Hi'))
 
 console.log(new Date());
 console.log('store_0 state after action SAY:', store_0.getState())
+
 // Output (skipping initialization output):
 //     Sun Aug 02 2015 01:03:05 GMT+0200 (CEST)
 //     speaker was called with state {} and action { type: 'SAY', message: 'Hi' }
@@ -75,8 +76,8 @@ var asyncSayActionCreator_0 = function (message) {
 // But then our action creator would not return an action, it would return "undefined". So this is not
 // quite the solution we're looking for.
 
-// Here's the trick: instead of returning an action, we'll return a function. And this function will be the
-// one to dispatch the action when it seems appropriate to do so. But if we want our function to be able to
+// Here's the trick(戏法、把戏): instead of returning an action, we'll return a function. And this function will be the
+// one to dispatch the action when it seems appropriate（适当的） to do so. But if we want our function to be able to
 // dispatch the action it should be given the dispatch function. Then, this should look like this:
 
 var asyncSayActionCreator_1 = function (message) {
@@ -91,7 +92,7 @@ var asyncSayActionCreator_1 = function (message) {
 }
 
 // Again you'll notice that our action creator is not returning an action, it is returning a function.
-// So there are high chances that our reducers won't know what to do with it. But we never know, so let's 
+// So there are high chances（高几率） that our reducers won't know what to do with it. But we never know, so let's 
 // try it out and find out what would happen...
 
 // Go to next tutorial: dispatch_action_creator-2.js

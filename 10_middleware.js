@@ -1,7 +1,7 @@
 // Tutorial 10 - middleware.js
 
-// We left dispatch-async-action-2.js with a new concept: "middleware". Somehow middleware should help us 
-// to solve async action handling. So what exactly is a middleware?
+// We left dispatch-async-action-2.js with a new concept（概念）: "middleware". Somehow（不知何故） middleware 
+// should help us to solve async action handling. So what exactly（精确的） is a middleware?
 
 // Generally speaking a middleware is something that comes in between parts A and B of an application to
 // transform what A sends before passing it to B. So instead of having:
@@ -10,18 +10,18 @@
 // A ---> middleware 1 ---> middleware 2 ---> middleware 3 --> ... ---> B
 
 // How could middleware help us in the Redux context? Well it seems that the function that we are
-// returning from our async action creator cannot be handled natively by Redux but if we had a 
+// returning from our async action creator cannot be handled natively（自然地） by Redux but if we had a 
 // middleware between our action creator and our reducers, we could transform this function into something
-// that suits Redux:
+// that suits（适合） Redux:
 
 // action ---> dispatcher ---> middleware 1 ---> middleware 2 ---> reducers
 
 // Our middlewares will be called each time an action (or whatever else, like a function in our 
 // async action creator case) is dispatched and it should be able to help our action creator 
-// to dispatch the real action when he wants to (or do nothing - this is a totally valid and 
-// sometimes desired behavior).
+// to dispatch the real action when he wants to (or do nothing - this is a totally valid （完全有效）and 
+// sometimes desired behavior（理想行为）).
 
-// In Redux, middlewares are functions that must conform to a very specific signature and follow
+// In Redux, middlewares are functions that must conform（符合） to a very specific signature（标志） and follow
 // a strict structure:
 /*
     var anyMiddleware = function ({ dispatch, getState }) {
@@ -31,16 +31,23 @@
             }
         }
     }
+
+    var anyMiddeleware = ({dispatch,getState}) =>
+        (next) => 
+            (action) => {
+                // your middleware-specific code goes here
+            }
+
 */
 
-// As you can see above, a middleware is made of 3 nested functions (that will get called sequentially):
-// 1) The first level provide the dispatch function and a getState function (if your 
-//     middleware or your action creator needs to read data from state) to the 2 other levels
-// 2) The second level provide the next function that will allow you to explicitly hand over
+// As you can see above, a middleware is made of 3 nested(嵌套) functions (that will get called sequentially（顺序）):
+// 1) The first level provide the dispatch function and a getState function 
+// (if your middleware or your action creator needs to read data from state) to the 2 other levels
+// 2) The second level provide the next function that will allow you to explicitly（明确） hand over
 //     your transformed input to the next middleware or to Redux (so that Redux can finally call all reducers).
 // 3) the third level provide the action received from the previous middleware or from your dispatch
 //     and can either trigger the next middleware (to let the action continue to flow) or process
-//     the action in any appropriate way.
+//     the action in any appropriate way（以任何适当的方式）.
 
 // The middleware we have to build for our async action creator, is called a thunk middleware and
 // its code is provided here: https://github.com/gaearon/redux-thunk.

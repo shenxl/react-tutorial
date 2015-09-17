@@ -48,31 +48,39 @@ console.log('store_0 state after initialization:', store_0.getState())
 // Let's dispatch our first action... Remember in 'simple-action-creator.js' we said:
 //     "To dispatch an action we need... a dispatch function." Captain obvious
 // 让我们派发第一个action... 记住在'simple-action-creator.js'中我们说过：
-//      “派发action我们需要一个 dispatch 函数”    
+//      “派发action我们需要一个 dispatch 函数” 意如其文
 
 // The dispatch function we're looking for is provided by Redux and will propagate our action
 // to all of our reducers! The dispatch function is accessible through Redux 
 // instance "dispatch" property
+// 
+// 我们需要的dispatch函数已经为Redux所提供，并会将action传播到我们所有的reducers。这个dispatch函数
+// 通过Redux初始化对象的“dispatch”属性来访问。
 
 // To dispatch an action, simply call:
 
 store_0.dispatch({
     type: 'AN_ACTION'
 })
+
+
 // Output:
 // userReducer was called with state {} and action { type: 'AN_ACTION' }
 // itemsReducer was called with state [] and action { type: 'AN_ACTION' }
 
 // Each reducer is effectively called but since none of our reducers care about this action type,
 // the state is left unchanged:
+// 每个reducer都被有效的调用，但是没有reducers处理这个action类型。
+// 状态保持不变
 
 console.log('store_0 state after action AN_ACTION:', store_0.getState())
 // Output: store_0 state after action AN_ACTION: { user: {}, items: [] }
 
-// But, wait a minute! Aren't we supposed to use an action creator to send an action? We could indeed
+// But, wait a minute! Aren't we supposed to（应该） use an action creator to send an action? We could indeed（确实）
 // use an actionCreator but since all it does is return an action it would not bring anything more in
-// this case. But for the sake of future coming difficulties let's do it the right way according to
-// flux theory. And let's make this action creator send an action we actually care about:
+// this case. But for the sake（目的） of future coming difficulties let's do it the right way according to（通过）
+// flux theory（理论）. And let's make this action creator send an action we actually（实际上） care about:
+// 
 
 var setNameActionCreator = function (name) {
     return {

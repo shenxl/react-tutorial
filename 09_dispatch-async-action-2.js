@@ -47,7 +47,7 @@ store_0.dispatch(asyncSayActionCreator_1('Hi'))
 // tip: "Use custom middleware for async actions.". It looks like we're on the right path but what is this
 // "middleware" thing?
 
-// Just to reassure you, our action creator asyncSayActionCreator_1 is well-written and will work as expected
-// as soon as we've figured out what is a middleware and how to use it.
+// Just to reassure（使消除疑虑 、安抚） you, our action creator asyncSayActionCreator_1 is well-written 
+// and will work as expected as soon as we've figured out（相出、知道） what is a middleware and how to use it.
 
 // Go to next tutorial: middleware.js
